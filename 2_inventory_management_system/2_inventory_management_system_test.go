@@ -41,3 +41,22 @@ func TestInventoryManagementSystemPartOneActualInput(t *testing.T) {
 	output := InventoryManagementSystemPartOne(input)
 	t.Log(output)
 }
+
+func TestInventoryManagementSystemPartTwoExampleInput(t *testing.T) {
+	input := []string{
+		"abcde",
+		"fghij",
+		"klmno",
+		"pqrst",
+		"fguij",
+		"axcye",
+		"wvxyz",
+	}
+	expected := "fgij"
+	output := InventoryManagementSystemPartTwo(input)
+	t.Log(output)
+
+	if output != expected {
+		t.Fail()
+	}
+}

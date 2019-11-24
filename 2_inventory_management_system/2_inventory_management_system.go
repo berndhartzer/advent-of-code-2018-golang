@@ -32,3 +32,7 @@ func InventoryManagementSystemPartOne(boxIds []string) int {
 
 	return twos * threes
 }
+
+func InventoryManagementSystemPartTwo(boxIds []string) string {
+	return "0"
+}
