@@ -60,3 +60,20 @@ func TestInventoryManagementSystemPartTwoExampleInput(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestInventoryManagementSystemPartTwoActualInput(t *testing.T) {
+	file, err := os.Open("./2_input.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	var input []string
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		input = append(input, scanner.Text())
+	}
+
+	output := InventoryManagementSystemPartTwo(input)
+	t.Log(output)
+}
