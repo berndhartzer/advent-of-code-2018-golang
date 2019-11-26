@@ -1,10 +1,10 @@
 package one_chronal_calibration
 
 import (
-	"testing"
-	"os"
-	"log"
 	"bufio"
+	"log"
+	"os"
+	"testing"
 )
 
 func TestChronalCalibrationPartOneActualInput(t *testing.T) {

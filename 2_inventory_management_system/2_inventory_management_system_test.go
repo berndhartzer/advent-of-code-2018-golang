@@ -1,10 +1,10 @@
 package two_inventory_management_system
 
 import (
-	"testing"
-	"os"
-	"log"
 	"bufio"
+	"log"
+	"os"
+	"testing"
 )
 
 func TestInventoryManagementSystemPartOneExampleInput(t *testing.T) {

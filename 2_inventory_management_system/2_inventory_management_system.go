@@ -34,7 +34,7 @@ func InventoryManagementSystemPartOne(boxIds []string) int {
 }
 
 func InventoryManagementSystemPartTwo(boxIds []string) string {
-	var chars = make([]byte, len(boxIds[0]) - 1)
+	var chars = make([]byte, len(boxIds[0])-1)
 
 	for i, id := range boxIds {
 
@@ -43,7 +43,7 @@ func InventoryManagementSystemPartTwo(boxIds []string) string {
 			break
 		}
 
-		remaining := boxIds[i + 1:]
+		remaining := boxIds[i+1:]
 		for _, compare := range remaining {
 			var common []byte
 
@@ -53,12 +53,12 @@ func InventoryManagementSystemPartTwo(boxIds []string) string {
 				}
 
 				// This can't be the correct pair
-				if len(common) <= j - 1 {
+				if len(common) <= j-1 {
 					break
 				}
 			}
 
-			if len(common) == len(id) - 1 {
+			if len(common) == len(id)-1 {
 				copy(chars, common)
 				break
 			}
