@@ -49,3 +49,7 @@ func NoMatterHowYouSliceItPartOne(claims []string) int {
 
 	return overlaps
 }
+
+func NoMatterHowYouSliceItPartTwo(claims []string) int {
+	return 0
+}
