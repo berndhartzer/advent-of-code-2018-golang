@@ -1,10 +1,10 @@
 package three_no_matter_how_you_slice_it
 
 import (
-	"testing"
-	"os"
-	"log"
 	"bufio"
+	"log"
+	"os"
+	"testing"
 )
 
 func TestNoMatterHowYouSliceItPartOneExampleInput(t *testing.T) {

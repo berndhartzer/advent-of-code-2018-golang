@@ -33,8 +33,8 @@ func NoMatterHowYouSliceItPartOne(claims []string) int {
 			nums[4],
 		}
 
-		for i := claim.X; i < claim.X + claim.W; i++ {
-			for j := claim.Y; j < claim.Y + claim.H; j++ {
+		for i := claim.X; i < claim.X+claim.W; i++ {
+			for j := claim.Y; j < claim.Y+claim.H; j++ {
 				fabric[fmt.Sprintf("%d,%d", i, j)] += 1
 			}
 		}
