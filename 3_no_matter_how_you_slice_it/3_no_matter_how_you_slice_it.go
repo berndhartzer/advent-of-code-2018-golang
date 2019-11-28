@@ -51,5 +51,52 @@ func NoMatterHowYouSliceItPartOne(claims []string) int {
 }
 
 func NoMatterHowYouSliceItPartTwo(claims []string) int {
-	return 0
+	fabric := make(map[string][]int)
+	getNumsRegex := regexp.MustCompile("[0-9]+")
+
+	for _, raw := range claims {
+		var nums = []int{}
+
+		rawNums := getNumsRegex.FindAllString(raw, -1)
+		for _, rawNum := range rawNums {
+			num, _ := strconv.Atoi(rawNum)
+			nums = append(nums, num)
+		}
+
+		claim := Claim{
+			nums[0],
+			nums[1],
+			nums[2],
+			nums[3],
+			nums[4],
+		}
+
+		for i := claim.X; i < claim.X+claim.W; i++ {
+			for j := claim.Y; j < claim.Y+claim.H; j++ {
+				fabric[fmt.Sprintf("%d,%d", i, j)] = append(fabric[fmt.Sprintf("%d,%d", i, j)], claim.ID)
+			}
+		}
+	}
+
+	var idsWithOverlaps = make(map[int]bool)
+	for _, ids := range fabric {
+		if len(ids) > 1 {
+			for _, id := range ids {
+				idsWithOverlaps[id] = true
+			}
+		} else {
+			if idsWithOverlaps[ids[0]] != true {
+				idsWithOverlaps[ids[0]] = false
+			}
+		}
+	}
+
+	noOverlaps := 0
+	for id, overlap := range idsWithOverlaps {
+		if !overlap {
+			noOverlaps = id
+		}
+	}
+
+	return noOverlaps
 }

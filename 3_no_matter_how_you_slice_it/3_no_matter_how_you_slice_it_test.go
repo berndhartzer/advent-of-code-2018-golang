@@ -51,3 +51,20 @@ func TestNoMatterHowYouSliceItPartTwoExampleInput(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestNoMatterHowYouSliceItPartTwoActualInput(t *testing.T) {
+	file, err := os.Open("./3_input.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	var input []string
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		input = append(input, scanner.Text())
+	}
+
+	output := NoMatterHowYouSliceItPartTwo(input)
+	t.Log(output)
+}
